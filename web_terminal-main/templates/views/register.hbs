@@ -1,0 +1,82 @@
+<html lang="en">
+  <head>
+    {{>header}}
+    <script src="./js/login.js"></script>
+    <style>
+      body{
+        background-color:#495159;
+      }
+    </style>
+
+    <title>Employee Registeration</title>
+  </head>
+  <body>
+    <!--Main-->
+    <a class="underlineHover myRmainText" href="/">Return to hompage</a>
+
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        {{#if messages.error}}
+          <span class="registerSpan">{{messages.error}}</span><br>
+        {{/if}}
+
+        <div class="fadeIn first">
+          <img class="loginFormImage" src="./images/logo.png" />
+        </div>
+        <h2>Register</h2>
+
+        <!-- Login Form -->
+        <form action="/api/users/register" method="POST">
+          <input
+            type="name"
+            id="email"
+            class="fadeIn second"
+            name="name"
+            placeholder="Name"
+            value="{{messages.name}}"
+          />
+          <input
+            type="email"
+            id="email"
+            class="fadeIn second"
+            name="email"
+            placeholder="Email"
+            value="{{messages.email}}"
+          />
+          <input
+            type="tel"
+            id="email"
+            class="fadeIn second"
+            name="ph_number"
+            placeholder="Ph Number"
+            value="{{messages.ph_number}}"
+          />
+          <input
+            type="password"
+            id="password"
+            class="fadeIn third"
+            name="password"
+            placeholder="Password"
+          />
+          <input
+            type="password"
+            id="password"
+            class="fadeIn third"
+            name="confirm_password"
+            placeholder="Confirm Password"
+          />
+          <button type="submit" class="fadeIn fourth myBtn" value="Register">Register</button>
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+          <a class="underlineHover" href="#">Forgot Password?</a>
+          <a class="underlineHover" href="/">Return to hompage</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

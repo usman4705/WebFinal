@@ -1,0 +1,34 @@
+{
+  "name": "store",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": " nodemon src/app.js -e js,hbs"
+  },
+  "dependencies": {
+    "awesome-notifications": "^3.1.1",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.25.2",
+    "config": "^3.3.6",
+    "connect-mongo": "^4.4.1",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.2.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.2",
+    "handlebars-helper-ternary": "^1.0.0",
+    "hbs": "^4.1.2",
+    "http-errors": "~1.6.3",
+    "logger": "0.0.1",
+    "mongoose": "^5.12.12",
+    "morgan": "~1.9.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {}
+}

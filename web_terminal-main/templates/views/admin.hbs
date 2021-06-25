@@ -1,0 +1,72 @@
+<html lang="en">
+  <head>
+    {{>header}}
+    <script src="./js/script.js"></script>
+
+    <title>Contact Us</title>
+  </head>
+  <body>
+     {{>adminNavBar}}
+    <!--Main-->
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+          <img class="loginFormImage" src="./images/logo.png" />
+        </div>
+        <h2>Add a  New Product</h2>
+
+        <!-- Login Form -->
+        <form action="/api/products" method="POST" encType="multipart/form-data">
+          <input
+            type="text"
+            id="title"
+            class="fadeIn second"
+            name="name"
+            placeholder="Name of Product"
+          />
+          <input
+            type="number"
+            id="price"
+            class="fadeIn second"
+            name="price"
+            placeholder="Price"
+          />
+          <input
+            type="text"
+            id="category"
+            class="fadeIn second"
+            name="category"
+            placeholder="Category"
+          />
+          <input
+            type="text"
+            id="tags"
+            class="fadeIn third"
+            name="tags"
+            placeholder="Tags"
+          />
+          <input
+            type="text"
+            id="stock"
+            class="fadeIn third"
+            name="stock"
+            placeholder="Stock"
+          />
+          <input
+            type="file"
+            id="photo"
+            class="fadeIn third"
+            name="photo"
+          />
+            {{!-- <input type="file" id="photo" class="fadeIn third" name="photo" /> --}}
+          <button type="submit" class="fadeIn fourth myBtn" value="Register">Add Product</button>
+        </form>
+
+      </div>
+    </div>
+     {{>footer}}
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{>header}}
+
+    <!--JS-->
+    {{!-- <script src="./js/shop.js"></script> --}}
+    <script src="./js/products.js"></script>
+
+    <title>Shop</title>
+  </head>
+  <body>
+    {{>navbar}}
+    
+    <div class="wrapper">
+      <div class="container">
+        <div class="row g-1 allProducts">
+          {{#each products as |product|}}
+          <div class="col-md-3">
+              <div class="card p-3">
+                <div class="text-center">
+                  <img src="{{product.productImage}}" width="200" />
+                </div>
+                <div class="product-details">
+                  <span class="font-weight-bold d-block">Rs. {{product.price}}</span>
+                  <span>{{product.name}}</span>
+                  <div class="buttons d-flex flex-row">
+                    <div class="cart"><i class="fa fa-shopping-cart myShopping"></i></div>
+                    <button data-product="{{json product}}" class="btn btn-success cart-button btn-block">
+                      <span class="dot">1</span>Add To Cart
+                    </button>
+                  </div>
+                  <div class="weight"><small>Stock: {{product.stock}}</small></div>
+                </div>
+              </div>
+            </div>
+            {{/each}}
+          </div>
+      </div>
+    </div>
+    
+    {{>footer}}
+  </body>
+</html>
+

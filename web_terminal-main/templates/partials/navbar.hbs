@@ -1,0 +1,147 @@
+<div class="navBar">
+  <div class="container-fluid headerTop">
+    <div class="d-flex flex-row bd-highlight mb-3 justify-content-between">
+      <div class="p-2 bd-highlight">
+        <a class="navbar-brand" href="/"><img
+            class="navbarImg"
+            src="./images/logo.png"
+            alt="logo"
+          /></a>
+      </div>
+
+      <div class="p-2 bd-highlight">
+        <form class="d-flex search">
+          <input
+            class="form-control me-2 searchField"
+            type="search"
+            placeholder="Search Items.."
+            aria-label="Search"
+          />
+          <button class="btn btn-primary btnSearch" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+      <div class="p-2 bd-highlight">
+        <div class="btn-group dropstart">
+          <button
+            type="button"
+            class="btn"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa fa-user" aria-hidden="true"></i>
+
+          </button>
+          <a href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true">
+              <span class="cartCounter">{{ternary
+                  true
+                  session.cart.totalQty
+                  false
+                  0
+                }}
+              </span>
+
+            </i>
+          </a>
+
+          <span class="visually-hidden">Toggle Dropdown</span>
+
+          <ul class="dropdown-menu">
+            {{#if user}}
+              <li>
+                <form id="logout" action="/logout" method="POST">
+                  <a
+                    onclick="document.getElementById('logout').submit()"
+                    class="dropdown-item"
+                    style="cursor:pointer"
+                  >Logout</a>
+                </form>
+              </li>
+            {{else}}
+              <li>
+                <a class="dropdown-item" href="/login">Login</a>
+              </li>
+            {{/if}}
+            <li><a class="dropdown-item" href="/register">Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid mainMenu">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="collapse navbar-collapse navbarLinks"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown myDropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              All Categories
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">All Products</a></li>
+              <li><a class="dropdown-item" href="#">Papers</a></li>
+              <li><a class="dropdown-item" href="#">Filers</a></li>
+            </ul>
+          </li>
+          <span class="main-menu"></span>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/shop">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about-us">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact-us">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Example split danger button -->
+    <div class="btn-group dropstart mobile-menu">
+      <button
+        type="button"
+        class="btn rounded"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="fa fa-bars">Menu</i>
+      </button>
+
+      <span class="visually-hidden">Toggle Dropdown</span>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/index">Home</a></li>
+        <li><a class="dropdown-item" href="/shop">Shop</a></li>
+        <li><a class="dropdown-item" href="/about-us">About Us</a></li>
+        <li>
+          <a class="dropdown-item" href="/contact-us">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
